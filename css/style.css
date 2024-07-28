@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+}
+
+.card {
+  background-color: #333;
+}
+
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.synthesizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #444;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+.knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+input[type="range"] {
+  width: 100px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.piano-roll {
+  display: flex;
+  align-items: flex-end;
+  background-color: #444;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.key {
+  width: 40px;
+  height: 100px;
+  margin: 2px;
+  background-color: #666;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.key:hover {
+  background-color: #888;
+}

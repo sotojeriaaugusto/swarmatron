@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swarmatron Synthesizer</title>
+    <style>
+      /* Estilos básicos para el sintetizador */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #161616;
+        --card-background-color: rgba(255, 255, 255, 0.015);
+        --card-border-color: rgba(255, 255, 255, 0.1);
+        --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+        --card-box-shadow-1-y: 3px;
+        --card-box-shadow-1-blur: 6px;
+        --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+        --card-box-shadow-2-y: 8px;
+        --card-box-shadow-2-blur: 15px;
+      }
+
+      .card {
+        background-color: #18181b;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
+            var(--card-box-shadow-1),
+          0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
+            var(--card-box-shadow-2),
+          0 0 0 1px var(--card-border-color);
+        padding: 16px 16px 16px 16px;
+        h1 {
+          text-align: center;
+          color: #a1a1aa;
+          font-family: monospace;
+          margin-bottom: 15px;
+        }
+        p {
+          text-align: center;
+          color: #a1a1aa;
+          font-family: monospace;
+          margin-bottom: 15px;
+        }
+      }
+
+      button {
+        background-color: #18181b;
+        padding: 20px;
+        box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
+            var(--card-box-shadow-1),
+          0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
+            var(--card-box-shadow-2),
+          0 0 0 1px var(--card-border-color);
+        color: #a1a1aa;
+        border-radius: 15px;
+      }
+
+      .control-container {
+        margin-bottom: 20px;
+      }
+
+      .knob-container {
+        margin: 10px;
+      }
+
+      .key {
+        width: 50px;
+        height: 150px;
+        background: #333;
+        color: #fff;
+        display: inline-block;
+        margin: 1px;
+        text-align: center;
+        line-height: 150px;
+        cursor: pointer;
+      }
+
+      .key:active {
+        background: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Swarmatron Synthesizer</h1>
+      <p>Desarrollado por Augusto Soto</p>
+    </div>
+
+    <!-- Power Button -->
+    <div class="control-container">
+      <button id="power-button">Encender</button>
+    </div>
+
+    <!-- Master Volume Knob -->
+    <div class="control-container">
+      <label for="master-volume-knob">Master Volume</label>
+      <input
+        type="range"
+        id="master-volume-knob"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5"
+      />
+    </div>
+
+    <!-- Detune Knob -->
+    <div class="control-container">
+      <label for="detune-knob">Detune</label>
+      <input
+        type="range"
+        id="detune-knob"
+        min="-100"
+        max="100"
+        step="1"
+        value="0"
+      />
+    </div>
+
+    <!-- Frequency Knob -->
+    <div class="control-container">
+      <label for="frequency-knob">Frequency</label>
+      <input
+        type="range"
+        id="frequency-knob"
+        min="20"
+        max="2000"
+        step="1"
+        value="50"
+      />
+    </div>
+
+    <!-- Piano Roll -->
+    <div id="piano-roll">
+      <div class="key" data-note="261.63">C4</div>
+      <!-- Example key -->
+      <div class="key" data-note="293.66">D4</div>
+      <!-- Example key -->
+      <div class="key" data-note="329.63">E4</div>
+      <!-- Example key -->
+      <div class="key" data-note="349.23">F4</div>
+      <!-- Example key -->
+      <div class="key" data-note="392.00">G4</div>
+      <!-- Example key -->
+      <div class="key" data-note="440.00">A4</div>
+      <!-- Example key -->
+      <div class="key" data-note="493.88">B4</div>
+      <!-- Example key -->
+      <div class="key" data-note="523.25">C5</div>
+      <!-- Example key -->
+    </div>
+
+    <script src="./js/swarmatron.js"></script>
+  </body>
+</html>
